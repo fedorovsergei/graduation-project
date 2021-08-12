@@ -1,14 +1,17 @@
 package com.example.graduationproject.Entity;
 
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
 
 
 @MappedSuperclass
 @Access(AccessType.FIELD)
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 public abstract class BaseAbstractEntityId {
     public static final int START_SEQ = 100000;

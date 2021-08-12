@@ -1,17 +1,21 @@
 package com.example.graduationproject.Entity;
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
+import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.List;
 
 
 @Entity
 @Table(name = "USERS")
-@Data
+@Getter
+@Setter
+@ToString
 @NoArgsConstructor
 public class User extends BaseAbstractEntityId {
 
@@ -23,4 +27,8 @@ public class User extends BaseAbstractEntityId {
 
     @Column(name = "RESTAURANT_DATE_VOTE")
     private LocalDate restaurantVoteDate;
+
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "user")
+    @ToString.Exclude
+    private List<Vote> votes;
 }

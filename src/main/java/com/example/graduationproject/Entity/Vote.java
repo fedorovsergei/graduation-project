@@ -12,12 +12,11 @@ import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "MEAL")
+@Table(name = "VOTE")
 @Getter
 @Setter
-@ToString
 @NoArgsConstructor
-public class Meal extends BaseAbstractEntityName {
+public class Vote extends BaseAbstractEntityId {
 
     @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
@@ -25,20 +24,22 @@ public class Meal extends BaseAbstractEntityName {
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Restaurant restaurant;
 
-    @Column(name = "PRICE")
-    private int price;
+    @JsonIgnore
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "USER_ID")
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    private User user;
 
     @Column(name = "DATE_INPUT")
-    private LocalDate dateInput;
+    private LocalDate dateVote;
 
     @Override
     public String toString() {
-        return "Meal{" +
+        return "Vote{" +
                 "id=" + id +
-                ", name='" + name + '\'' +
                 ", restaurant=" + restaurant +
-                ", price=" + price +
-                ", dateInput=" + dateInput +
+                ", user=" + user +
+                ", dateVote=" + dateVote +
                 '}';
     }
 }

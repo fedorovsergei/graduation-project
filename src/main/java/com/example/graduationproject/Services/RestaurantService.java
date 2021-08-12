@@ -29,9 +29,6 @@ public class RestaurantService {
 
     @Transactional
     public Restaurant createAndSaveRestaurant(Restaurant restaurant) {
-        if (restaurant.getId() == null) {
-            restaurant.setNullVotes();
-        }
         return restaurantRepo.save(restaurant);
     }
 

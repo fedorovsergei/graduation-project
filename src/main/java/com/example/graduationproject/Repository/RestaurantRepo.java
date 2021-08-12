@@ -8,4 +8,5 @@ import org.springframework.transaction.annotation.Transactional;
 @Repository
 @Transactional(readOnly = true)
 public interface RestaurantRepo extends JpaRepository<Restaurant, Integer> {
+
 }
