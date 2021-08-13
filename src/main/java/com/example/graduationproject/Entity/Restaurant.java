@@ -27,5 +27,16 @@ public class Restaurant extends BaseAbstractEntityName {
     @ToString.Exclude
     private List<Vote> votes;
 
+    @Column(name = "VOTE_COUNT")
+    protected Integer voteCount;
+
+    public Integer incrementVote() {
+        return voteCount++;
+    }
+
+    public Integer decrementVote() {
+        return voteCount--;
+    }
+
 }
 

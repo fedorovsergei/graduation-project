@@ -35,13 +35,20 @@ public class UserService {
         if (vote == null) {
             vote = new Vote();
         }
-        if (vote.getDateVote() != null && LocalTime.now().isAfter(LocalTime.of(11, 0))) {
+        if (vote.getDateVote() != null && LocalTime.now().isAfter(LocalTime.of(23, 0))) {
             System.out.println("поздно");
             return vote;
         }
+        User user = userRepo.findById(userId).get();
+        Restaurant restaurant = restaurantRepo.findById(restaurantId).get();
+        if (vote.getRestaurant() != null) {
+            Restaurant oldVoteRestaurant = restaurantRepo.findById(vote.getRestaurant().getId()).get();
+            oldVoteRestaurant.decrementVote();
+        }
         vote.setDateVote(LocalDate.now());
-        vote.setUser(userRepo.findById(userId).get());
-        vote.setRestaurant(restaurantRepo.findById(restaurantId).get());
+        vote.setUser(user);
+        vote.setRestaurant(restaurant);
+        restaurant.incrementVote();
         voteRepo.save(vote);
         return vote;
     }

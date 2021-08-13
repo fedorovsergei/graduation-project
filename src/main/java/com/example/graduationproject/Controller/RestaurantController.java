@@ -28,6 +28,7 @@ public class RestaurantController {
 
     @PostMapping()
     public Restaurant addRestaurant(@RequestBody Restaurant restaurant) {
+        restaurant.setVoteCount(0);
         return restaurantService.createAndSaveRestaurant(restaurant);
     }
 

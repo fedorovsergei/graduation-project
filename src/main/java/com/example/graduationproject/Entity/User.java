@@ -22,12 +22,6 @@ public class User extends BaseAbstractEntityId {
     @Column(name = "USERNAME")
     protected String name;
 
-    @Column(name = "RESTAURANT_VOTE")
-    private Integer restaurantVote;
-
-    @Column(name = "RESTAURANT_DATE_VOTE")
-    private LocalDate restaurantVoteDate;
-
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "user")
     @ToString.Exclude
     private List<Vote> votes;

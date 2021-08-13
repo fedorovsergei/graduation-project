@@ -4,6 +4,7 @@ import com.example.graduationproject.Entity.Meal;
 import com.example.graduationproject.Services.MealService;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.List;
 
 
@@ -36,6 +37,7 @@ public class MealController {
 
     @PostMapping()
     public Meal addMeal(@PathVariable Integer restaurantId, @RequestBody Meal meal) {
+        meal.setDateInput(LocalDate.now());
         return mealService.createAndSaveMeal(restaurantId, meal);
     }
 
