@@ -20,8 +20,14 @@ public class RestaurantService {
     }
 
     public Restaurant getRestaurant(Integer id) {
-        return restaurantRepo.findById(id).get();
+        try {
+            return restaurantRepo.findById(id).get();
+        }
+        catch (Exception e) {
+            return null;
+        }
     }
+
 
     public List<Restaurant> getRestaurants() {
         return restaurantRepo.findAll(SORT_NAME);

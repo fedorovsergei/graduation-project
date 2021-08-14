@@ -22,10 +22,14 @@ public class MealService {
     }
 
     public Meal getMeal(Integer restaurantId, Integer mealId) {
-        Meal meal = mealRepo.findById(mealId).get();
-        if (meal.getRestaurant().getId().equals(restaurantId)) {
-            return meal;
-        } else return null;
+        try {
+            Meal meal = mealRepo.findById(mealId).get();
+            if (meal != null && meal.getRestaurant() != null && restaurantId.equals(meal.getRestaurant().getId())) {
+                return meal;
+            } else return null;
+        } catch (Exception e) {
+            return null;
+        }
     }
 
     public List<Meal> getAllMeal(Integer restaurantId) {
@@ -39,15 +43,19 @@ public class MealService {
 
     @Transactional
     public Meal createAndSaveMeal(Integer restaurantId, Meal meal) {
-        meal.setRestaurant(restaurantRepo.findById(restaurantId).get());
-        return mealRepo.save(meal);
+        try {
+            meal.setRestaurant(restaurantRepo.findById(restaurantId).get());
+            return mealRepo.save(meal);
+        } catch (Exception e) {
+            return null;
+        }
     }
 
 
     @Transactional
     public void deleteMeal(Integer restaurantId, Integer mealId) {
         Meal meal = mealRepo.findById(mealId).get();
-        if (meal.getRestaurant().getId().equals(restaurantId)) {
+        if (meal != null && meal.getRestaurant() != null && restaurantId.equals(meal.getRestaurant().getId())) {
             mealRepo.deleteById(mealId);
         }
     }

@@ -38,8 +38,8 @@ CREATE TABLE vote
     restaurant_id INTEGER NOT NULL,
     user_id       INTEGER NOT NULL,
     date_input    TIMESTAMP,
-    FOREIGN KEY (restaurant_id) REFERENCES restaurant (id),
-    FOREIGN KEY (user_id) REFERENCES users (id)
+    FOREIGN KEY (restaurant_id) REFERENCES restaurant (id) ON DELETE CASCADE,
+    FOREIGN KEY (user_id) REFERENCES users (id) ON DELETE CASCADE
 );
 CREATE UNIQUE INDEX user_id_date_input ON vote (user_id, date_input);
 CREATE INDEX date_input ON vote (date_input);
