@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @Transactional(readOnly = true)
@@ -31,6 +32,17 @@ public class RestaurantService {
 
     public List<Restaurant> getRestaurants() {
         return restaurantRepo.findAll(SORT_NAME);
+    }
+
+    public List<Restaurant> getRestaurantsWithTodayVote() {
+        return restaurantRepo.findAll(SORT_NAME);
+    }
+
+    @Transactional
+    public void deleteVoteCount() {
+        List<Restaurant> list = restaurantRepo.findAll();
+        list.forEach(restaurant -> restaurant.setVoteCount(0));
+//        restaurantRepo.saveAll(list);
     }
 
     @Transactional
