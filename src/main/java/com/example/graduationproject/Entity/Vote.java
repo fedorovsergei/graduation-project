@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import lombok.ToString;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
@@ -32,14 +31,4 @@ public class Vote extends BaseAbstractEntityId {
 
     @Column(name = "DATE_INPUT")
     private LocalDate dateVote;
-
-    @Override
-    public String toString() {
-        return "Vote{" +
-                "id=" + id +
-                ", restaurant=" + restaurant +
-                ", user=" + user +
-                ", dateVote=" + dateVote +
-                '}';
-    }
 }

@@ -1,10 +1,13 @@
 package com.example.graduationproject.Entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import jdk.nashorn.internal.ir.annotations.Ignore;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import org.hibernate.annotations.Subselect;
+import org.springframework.data.jpa.repository.Query;
 
 import javax.persistence.*;
 import java.util.List;
@@ -27,16 +30,5 @@ public class Restaurant extends BaseAbstractEntityName {
     @ToString.Exclude
     private List<Vote> votes;
 
-    @Column(name = "VOTE_COUNT")
-    protected Integer voteCount;
-
-    public Integer incrementVote() {
-        return voteCount++;
-    }
-
-    public Integer decrementVote() {
-        return voteCount--;
-    }
-
+    private Integer voteCount;
 }
-

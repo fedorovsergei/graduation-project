@@ -2,7 +2,6 @@ package com.example.graduationproject.Controller;
 
 import com.example.graduationproject.Entity.Meal;
 import com.example.graduationproject.ExceptionHandling.Meal.NoSuchMealException;
-import com.example.graduationproject.ExceptionHandling.Restaurant.NoSuchRestaurantException;
 import com.example.graduationproject.ExceptionHandling.Restaurant.NoSuchRestaurantParamException;
 import com.example.graduationproject.Services.MealService;
 import org.springframework.http.HttpStatus;

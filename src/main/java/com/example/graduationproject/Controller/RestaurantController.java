@@ -23,7 +23,7 @@ public class RestaurantController {
     }
 
 
-    //получаем список ресторанов со списком голосов за сегодняшний день
+    //получаем список ресторанов со списком голосов за сегодняшний день и количество голосов
     @GetMapping()
     public ResponseEntity<List<Restaurant>> getRestaurants() {
         List<Restaurant> list = restaurantService.getRestaurants();
@@ -93,10 +93,10 @@ public class RestaurantController {
         return new ResponseEntity<>("Restaurant with id=" + id + " was deleted", HttpStatus.OK);
     }
 
-    @PutMapping("/deleteVoteCount")
-    public String updateRestaurant() {
-        restaurantService.deleteVoteCount();
-        return null;
+//    @PutMapping("/deleteVoteCount")
+//    public String updateRestaurant() {
+//        restaurantService.deleteVoteCount();
+//        return null;
 //        return new ResponseEntity<>(eupdateRestaurant, HttpStatus.OK);
-    }
+//    }
 }

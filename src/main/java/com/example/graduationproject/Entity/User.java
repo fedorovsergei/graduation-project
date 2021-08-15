@@ -7,7 +7,6 @@ import lombok.Setter;
 import lombok.ToString;
 
 import javax.persistence.*;
-import java.time.LocalDate;
 import java.util.List;
 
 
@@ -20,9 +19,9 @@ import java.util.List;
 public class User extends BaseAbstractEntityId {
 
     @Column(name = "USERNAME")
-    protected String name;
+    private String name;
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "user")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
     @ToString.Exclude
     private List<Vote> votes;
 }
