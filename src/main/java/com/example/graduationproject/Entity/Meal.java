@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import lombok.ToString;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
@@ -15,7 +14,6 @@ import java.time.LocalDate;
 @Table(name = "MEAL")
 @Getter
 @Setter
-@ToString
 @NoArgsConstructor
 public class Meal extends BaseAbstractEntityName {
 
@@ -30,15 +28,4 @@ public class Meal extends BaseAbstractEntityName {
 
     @Column(name = "DATE_INPUT")
     private LocalDate dateInput;
-
-    @Override
-    public String toString() {
-        return "Meal{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", restaurant=" + restaurant +
-                ", price=" + price +
-                ", dateInput=" + dateInput +
-                '}';
-    }
 }

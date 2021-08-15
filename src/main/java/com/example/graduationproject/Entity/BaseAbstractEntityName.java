@@ -1,6 +1,8 @@
 package com.example.graduationproject.Entity;
 
-import lombok.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.Access;
 import javax.persistence.AccessType;
@@ -11,7 +13,6 @@ import javax.persistence.MappedSuperclass;
 @Access(AccessType.FIELD)
 @Getter
 @Setter
-@ToString
 @NoArgsConstructor
 public abstract class BaseAbstractEntityName extends BaseAbstractEntityId {
 

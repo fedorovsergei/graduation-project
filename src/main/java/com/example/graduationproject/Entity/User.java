@@ -14,7 +14,6 @@ import java.util.List;
 @Table(name = "USERS")
 @Getter
 @Setter
-@ToString
 @NoArgsConstructor
 public class User extends BaseAbstractEntityId {
 

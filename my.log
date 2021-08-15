@@ -2636,3 +2636,31 @@ Caused by: org.hibernate.hql.internal.ast.QuerySyntaxException: expecting IDENT,
 2021-08-16 01:29:59.234  INFO 1868 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2021-08-16 01:29:59.237  INFO 1868 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2021-08-16 01:29:59.270  INFO 1868 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-08-16 01:30:04.134  INFO 4348 --- [main] c.example.graduationproject.Application  : Starting Application using Java 1.8.0_302 on SergeiPC with PID 4348 (D:\Sergei\Programs\Java\Project\GraduationProject2.0\target\classes started by Sergei in D:\Sergei\Programs\Java\Project\GraduationProject2.0)
+2021-08-16 01:30:04.136  INFO 4348 --- [main] c.example.graduationproject.Application  : No active profile set, falling back to default profiles: default
+2021-08-16 01:30:04.731  INFO 4348 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-08-16 01:30:04.780  INFO 4348 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 42 ms. Found 4 JPA repository interfaces.
+2021-08-16 01:30:05.125  INFO 4348 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-08-16 01:30:05.132  INFO 4348 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-08-16 01:30:05.132  INFO 4348 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.50]
+2021-08-16 01:30:05.196  INFO 4348 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-08-16 01:30:05.196  INFO 4348 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1021 ms
+2021-08-16 01:30:05.318  INFO 4348 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-08-16 01:30:05.358  INFO 4348 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-08-16 01:30:05.460  INFO 4348 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-08-16 01:30:05.541  INFO 4348 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-08-16 01:30:05.735  INFO 4348 --- [main] hsqldb.db.HSQLDB7B2C4A3F5D.ENGINE        : checkpointClose start
+2021-08-16 01:30:05.735  INFO 4348 --- [main] hsqldb.db.HSQLDB7B2C4A3F5D.ENGINE        : checkpointClose synched
+2021-08-16 01:30:05.754  INFO 4348 --- [main] hsqldb.db.HSQLDB7B2C4A3F5D.ENGINE        : checkpointClose script done
+2021-08-16 01:30:05.805  INFO 4348 --- [main] hsqldb.db.HSQLDB7B2C4A3F5D.ENGINE        : checkpointClose end
+2021-08-16 01:30:05.809  INFO 4348 --- [main] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Driver does not support get/set network timeout for connections. (feature not supported)
+2021-08-16 01:30:05.811  INFO 4348 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-08-16 01:30:05.829  INFO 4348 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.HSQLDialect
+2021-08-16 01:30:06.372  INFO 4348 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-08-16 01:30:06.380  INFO 4348 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-08-16 01:30:06.770  WARN 4348 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-08-16 01:30:07.021  INFO 4348 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-08-16 01:30:07.029  INFO 4348 --- [main] c.example.graduationproject.Application  : Started Application in 3.571 seconds (JVM running for 4.509)
+2021-08-16 01:30:12.200  INFO 4348 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-08-16 01:30:12.200  INFO 4348 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-08-16 01:30:12.201  INFO 4348 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
