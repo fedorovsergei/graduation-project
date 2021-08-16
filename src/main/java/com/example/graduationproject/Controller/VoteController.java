@@ -3,7 +3,7 @@ package com.example.graduationproject.Controller;
 import com.example.graduationproject.Entity.Vote;
 import com.example.graduationproject.ExceptionHandling.Vote.NoSuchVoteException;
 import com.example.graduationproject.ExceptionHandling.Vote.NoSuchVoteParamException;
-import com.example.graduationproject.Services.UserService;
+import com.example.graduationproject.Services.VoteService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
@@ -17,9 +17,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/vote")
 public class VoteController {
 
-    private final UserService userService;
+    private final VoteService userService;
 
-    public VoteController(UserService userService) {
+    public VoteController(VoteService userService) {
         this.userService = userService;
     }
 

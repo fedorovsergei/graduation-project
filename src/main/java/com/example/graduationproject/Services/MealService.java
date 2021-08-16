@@ -1,8 +1,13 @@
 package com.example.graduationproject.Services;
 
 import com.example.graduationproject.Entity.Meal;
+import com.example.graduationproject.Entity.Restaurant;
+import com.example.graduationproject.ExceptionHandling.Meal.NoSuchMealException;
+import com.example.graduationproject.ExceptionHandling.Restaurant.NoSuchRestaurantException;
 import com.example.graduationproject.Repository.MealRepo;
 import com.example.graduationproject.Repository.RestaurantRepo;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -21,35 +26,37 @@ public class MealService {
     }
 
     public Meal getMeal(Integer restaurantId, Integer mealId) {
-        try {
-            Meal meal = mealRepo.findById(mealId).get();
-            if (meal != null && meal.getRestaurant() != null && restaurantId.equals(meal.getRestaurant().getId())) {
-                return meal;
-            } else return null;
-        } catch (Exception e) {
-            return null;
+        Meal meal = mealRepo.findById(mealId)
+                .orElseThrow(() -> new NoSuchMealException("There is no meal with Id=" + mealId + " in Database"));
+        if (meal != null && meal.getRestaurant() != null && restaurantId.equals(meal.getRestaurant().getId())) {
+            return meal;
         }
+        return null;
     }
 
+    @Cacheable("meal")
     public List<Meal> getAllMeal(Integer restaurantId) {
         return mealRepo.findAllByRestaurantId(restaurantId);
     }
 
-
     @Transactional
+    @CacheEvict(cacheNames="restaurant", allEntries=true)
     public Meal createAndSaveMeal(Integer restaurantId, Meal meal) {
-        try {
-            meal.setRestaurant(restaurantRepo.findById(restaurantId).get());
-            return mealRepo.save(meal);
-        } catch (Exception e) {
+        Restaurant restaurant = restaurantRepo
+                .findById(restaurantId).orElseThrow(() -> new NoSuchRestaurantException("Failed to save the restaurant to the database"));
+        if (restaurant == null) {
             return null;
         }
+        meal.setRestaurant(restaurant);
+        return mealRepo.save(meal);
     }
 
 
     @Transactional
+    @CacheEvict(cacheNames="restaurant", allEntries=true)
     public void deleteMeal(Integer restaurantId, Integer mealId) {
-        Meal meal = mealRepo.findById(mealId).get();
+        Meal meal = mealRepo.findById(mealId)
+                .orElseThrow(() -> new NoSuchMealException("There is no meal with Id=" + mealId + " in Database"));
         if (meal != null && meal.getRestaurant() != null && restaurantId.equals(meal.getRestaurant().getId())) {
             mealRepo.deleteById(mealId);
         }

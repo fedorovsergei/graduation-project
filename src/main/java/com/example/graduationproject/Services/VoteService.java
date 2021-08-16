@@ -2,9 +2,11 @@ package com.example.graduationproject.Services;
 
 import com.example.graduationproject.Entity.User;
 import com.example.graduationproject.Entity.Vote;
+import com.example.graduationproject.ExceptionHandling.Restaurant.NoSuchRestaurantException;
 import com.example.graduationproject.Repository.RestaurantRepo;
 import com.example.graduationproject.Repository.UserRepo;
 import com.example.graduationproject.Repository.VoteRepo;
+import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -13,19 +15,20 @@ import java.time.LocalTime;
 
 @Service
 @Transactional(readOnly = true)
-public class UserService {
+public class VoteService {
 
     private final RestaurantRepo restaurantRepo;
     private final UserRepo userRepo;
     private final VoteRepo voteRepo;
 
-    public UserService(RestaurantRepo restaurantRepo, UserRepo userRepo, VoteRepo voteRepo) {
+    public VoteService(RestaurantRepo restaurantRepo, UserRepo userRepo, VoteRepo voteRepo) {
         this.restaurantRepo = restaurantRepo;
         this.userRepo = userRepo;
         this.voteRepo = voteRepo;
     }
 
     @Transactional
+    @CacheEvict(cacheNames="restaurant", allEntries=true)
     public Vote vote(String userName, Integer restaurantId) {
         User user;
         try {
@@ -46,7 +49,8 @@ public class UserService {
         }
         vote.setDateVote(LocalDate.now());
         vote.setUser(user);
-        vote.setRestaurant(restaurantRepo.findById(restaurantId).get());
+        vote.setRestaurant(restaurantRepo.findById(restaurantId)
+                .orElseThrow(() -> new NoSuchRestaurantException("Failed to save the restaurant to the database")));
         return voteRepo.save(vote);
     }
 }

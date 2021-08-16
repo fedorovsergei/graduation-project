@@ -1,7 +1,10 @@
 package com.example.graduationproject.Services;
 
 import com.example.graduationproject.Entity.Restaurant;
+import com.example.graduationproject.ExceptionHandling.Restaurant.NoSuchRestaurantException;
 import com.example.graduationproject.Repository.RestaurantRepo;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -18,24 +21,24 @@ public class RestaurantService {
     }
 
     public Restaurant getRestaurant(Integer id) {
-        try {
-            return restaurantRepo.findById(id).get();
-        } catch (Exception e) {
-            return null;
-        }
+        return restaurantRepo.findById(id)
+                .orElseThrow(() -> new NoSuchRestaurantException("There is no restaurant with Id=" + id + " in Database"));
     }
 
+    @Cacheable("restaurant")
     public List<Restaurant> getRestaurants() {
         //Select * from RESTAURANT r join VOTE v on r.ID = v.RESTAURANT_ID where v.DATE_INPUT = '2021-08-16'
         return restaurantRepo.findAllByOrderByName();
     }
 
     @Transactional
+    @CacheEvict(cacheNames="restaurant", allEntries=true)
     public Restaurant createAndSaveRestaurant(Restaurant restaurant) {
         return restaurantRepo.save(restaurant);
     }
 
     @Transactional
+    @CacheEvict(cacheNames="restaurant", allEntries=true)
     public void deleteRestaurant(Integer id) {
         restaurantRepo.deleteById(id);
     }
