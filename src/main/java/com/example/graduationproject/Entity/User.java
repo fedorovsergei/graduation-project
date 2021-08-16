@@ -7,6 +7,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 import java.util.List;
 
 
@@ -18,6 +19,7 @@ import java.util.List;
 public class User extends BaseAbstractEntityId {
 
     @Column(name = "USERNAME")
+    @NotBlank
     private String name;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")

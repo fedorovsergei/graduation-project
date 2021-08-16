@@ -6,16 +6,18 @@ import com.example.graduationproject.ExceptionHandling.Restaurant.NoSuchRestaura
 import com.example.graduationproject.Services.MealService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.time.LocalDate;
 import java.util.List;
 
 
 @RestController
 @RequestMapping("/restaurant/{restaurantId}/meal")
+@Validated
 public class MealController {
-
     private final MealService mealService;
 
     public MealController(MealService mealService) {
@@ -49,21 +51,8 @@ public class MealController {
     }
 
 
-    @GetMapping("/today")
-    public ResponseEntity<List<Meal>> getTodayAllMeal(@PathVariable Integer restaurantId) {
-        if (restaurantId == null) {
-            throw new NoSuchRestaurantParamException("Couldn't find restaurantId");
-        }
-        List<Meal> list = mealService.getTodayAllMeal(restaurantId);
-        if (list.isEmpty()) {
-            throw new NoSuchMealException("There are no meals in the database");
-        }
-        return new ResponseEntity<>(list, HttpStatus.OK);
-    }
-
-
     @PostMapping()
-    public ResponseEntity<Meal> addMeal(@PathVariable Integer restaurantId, @RequestBody Meal meal) {
+    public ResponseEntity<Meal> addMeal(@PathVariable Integer restaurantId, @Valid @RequestBody Meal meal) {
         if (meal == null || restaurantId == null) {
             throw new NoSuchRestaurantParamException("Couldn't find meal or restaurantId");
         }
@@ -76,7 +65,7 @@ public class MealController {
     }
 
     @PutMapping
-    public ResponseEntity<Meal> updateMeal(@PathVariable Integer restaurantId, @RequestBody Meal meal) {
+    public ResponseEntity<Meal> updateMeal(@PathVariable Integer restaurantId, @Valid @RequestBody Meal meal) {
         if (meal == null || restaurantId == null) {
             throw new NoSuchRestaurantParamException("Couldn't find meal or restaurantId");
         }

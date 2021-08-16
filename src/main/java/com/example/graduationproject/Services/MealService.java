@@ -6,7 +6,6 @@ import com.example.graduationproject.Repository.RestaurantRepo;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.time.LocalDate;
 import java.util.List;
 
 @Service
@@ -34,10 +33,6 @@ public class MealService {
 
     public List<Meal> getAllMeal(Integer restaurantId) {
         return mealRepo.findAllByRestaurantId(restaurantId);
-    }
-
-    public List<Meal> getTodayAllMeal(Integer restaurantId) {
-        return mealRepo.findAllByRestaurantIdAndDateInput(restaurantId, LocalDate.now());
     }
 
 

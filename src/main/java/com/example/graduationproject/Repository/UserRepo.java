@@ -8,4 +8,5 @@ import org.springframework.transaction.annotation.Transactional;
 @Repository
 @Transactional(readOnly = true)
 public interface UserRepo extends JpaRepository<User, Integer> {
+    User findByName(String name);
 }

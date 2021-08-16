@@ -8,6 +8,7 @@ import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
+import javax.validation.constraints.NotBlank;
 
 @MappedSuperclass
 @Access(AccessType.FIELD)
@@ -17,5 +18,6 @@ import javax.persistence.MappedSuperclass;
 public abstract class BaseAbstractEntityName extends BaseAbstractEntityId {
 
     @Column(name = "NAME")
+    @NotBlank
     protected String name;
 }

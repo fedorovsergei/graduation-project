@@ -1,6 +1,5 @@
 package com.example.graduationproject.Services;
 
-import com.example.graduationproject.Entity.Restaurant;
 import com.example.graduationproject.Entity.User;
 import com.example.graduationproject.Entity.Vote;
 import com.example.graduationproject.Repository.RestaurantRepo;
@@ -27,19 +26,27 @@ public class UserService {
     }
 
     @Transactional
-    public Vote vote(Integer userId, Integer restaurantId) {
-        Vote vote = voteRepo.findByUserIdAndDateVote(userId, LocalDate.now());
+    public Vote vote(String userName, Integer restaurantId) {
+        User user;
+        try {
+            user = userRepo.findByName(userName);
+        } catch (Exception e) {
+            return null;
+        }
+        if (user == null) {
+            return null;
+        }
+        Vote vote = voteRepo.findByUserIdAndDateVote(user.getId(), LocalDate.now());
         if (vote == null) {
             vote = new Vote();
         }
         if (vote.getDateVote() != null && LocalTime.now().isAfter(LocalTime.of(11, 0))) {
             System.out.println("уже поздно");
-            return vote;
+            return null;
         }
         vote.setDateVote(LocalDate.now());
-        vote.setUser(userRepo.findById(userId).get());
+        vote.setUser(user);
         vote.setRestaurant(restaurantRepo.findById(restaurantId).get());
-        return vote;
+        return voteRepo.save(vote);
     }
 }
-

@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -23,8 +24,7 @@ public class RestaurantController {
     }
 
 
-    //получаем список ресторанов со списком голосов за сегодняшний день и количество голосов
-    @GetMapping()
+    @GetMapping("/allForUser")
     public ResponseEntity<List<Restaurant>> getRestaurants() {
         List<Restaurant> list = restaurantService.getRestaurants();
         if (list.isEmpty()) {
@@ -56,7 +56,7 @@ public class RestaurantController {
 
 
     @PostMapping()
-    public ResponseEntity<Restaurant> addRestaurant(@RequestBody Restaurant restaurant) {
+    public ResponseEntity<Restaurant> addRestaurant(@Valid @RequestBody Restaurant restaurant) {
         if (restaurant == null) {
             throw new NoSuchRestaurantParamException("Couldn't find restaurant");
         }
@@ -69,7 +69,7 @@ public class RestaurantController {
     }
 
     @PutMapping
-    public ResponseEntity<Restaurant> updateRestaurant(@RequestBody Restaurant restaurant) {
+    public ResponseEntity<Restaurant> updateRestaurant(@Valid @RequestBody Restaurant restaurant) {
         if (restaurant == null) {
             throw new NoSuchRestaurantParamException("Couldn't find restaurant");
         }
@@ -92,11 +92,4 @@ public class RestaurantController {
         restaurantService.deleteRestaurant(id);
         return new ResponseEntity<>("Restaurant with id=" + id + " was deleted", HttpStatus.OK);
     }
-
-//    @PutMapping("/deleteVoteCount")
-//    public String updateRestaurant() {
-//        restaurantService.deleteVoteCount();
-//        return null;
-//        return new ResponseEntity<>(eupdateRestaurant, HttpStatus.OK);
-//    }
 }
