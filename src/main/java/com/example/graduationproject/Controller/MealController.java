@@ -10,6 +10,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.security.Principal;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -20,13 +21,14 @@ import java.util.List;
 public class MealController {
     private final MealService mealService;
 
+
     public MealController(MealService mealService) {
         this.mealService = mealService;
     }
 
 
     @GetMapping()
-    public ResponseEntity<List<Meal>> getAllMeal(@PathVariable Integer restaurantId) {
+    public ResponseEntity<List<Meal>> getAllMeal(@PathVariable Integer restaurantId, Principal principal) {
         if (restaurantId == null) {
             throw new NoSuchRestaurantParamException("Couldn't find restaurantId");
         }
