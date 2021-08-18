@@ -31,3 +31,10 @@ build/
 
 ### VS Code ###
 .vscode/
+
+
+### Datebase ###
+*DB.lck
+*DB.log
+*DB.properties
+*DB.script
