@@ -1,6 +1,7 @@
 package com.example.graduationproject.Entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.sun.istack.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -31,11 +32,8 @@ public class Meal extends BaseAbstractEntityName {
     @Column(name = "PRICE")
     private int price;
 
+    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     @Column(name = "DATE_INPUT")
+    @NotNull
     private LocalDate dateInput;
-
-    public Meal(String name, int price) {
-        this.name = name;
-        this.price = price;
-    }
 }

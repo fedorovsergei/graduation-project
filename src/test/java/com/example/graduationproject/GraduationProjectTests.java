@@ -8,14 +8,5 @@ import org.springframework.boot.test.context.SpringBootTest;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest
-class ApplicationTests {
-
-    @Autowired
-    RestaurantController restaurantController;
-
-    @Test
-    public void contextLoads() throws Exception {
-        assertThat(restaurantController).isNotNull();
-    }
-
+class GraduationProjectTests {
 }

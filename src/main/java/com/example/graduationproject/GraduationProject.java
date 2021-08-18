@@ -13,19 +13,9 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @SpringBootApplication
 @EnableCaching
 @EnableSwagger2
-public class Application {
+public class GraduationProject {
 
     public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
-    }
-
-
-    @Bean
-    public Docket api() {
-        return new Docket(DocumentationType.SWAGGER_2)
-                .select()
-                .apis(RequestHandlerSelectors.any())
-                .paths(PathSelectors.any())
-                .build();
+        SpringApplication.run(GraduationProject.class, args);
     }
 }

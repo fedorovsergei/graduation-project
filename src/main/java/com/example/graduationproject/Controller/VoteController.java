@@ -4,6 +4,9 @@ import com.example.graduationproject.Entity.Vote;
 import com.example.graduationproject.ExceptionHandling.Vote.NoSuchVoteException;
 import com.example.graduationproject.ExceptionHandling.Vote.NoSuchVoteParamException;
 import com.example.graduationproject.Services.VoteService;
+
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
@@ -15,6 +18,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/vote")
+@Tag(name="Voting controller", description = "Only users have access")
+
 public class VoteController {
 
     private final VoteService userService;
@@ -23,6 +28,10 @@ public class VoteController {
         this.userService = userService;
     }
 
+    @Operation(
+            summary = "Voting for a restaurant",
+            description = "The user can vote at any time, but can only re-vote until 11:00"
+    )
     @PostMapping("/{restaurantId}")
     public ResponseEntity<Vote> vote(@PathVariable Integer restaurantId) {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();

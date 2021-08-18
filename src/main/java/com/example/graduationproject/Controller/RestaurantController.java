@@ -4,6 +4,8 @@ import com.example.graduationproject.Entity.Restaurant;
 import com.example.graduationproject.ExceptionHandling.Restaurant.NoSuchRestaurantException;
 import com.example.graduationproject.ExceptionHandling.Restaurant.NoSuchRestaurantParamException;
 import com.example.graduationproject.Services.RestaurantService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -15,6 +17,8 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/restaurant")
+@Tag(name = "Restaurant controller", description = "Only admins have access to methods, " +
+        "method \"allForUser\" available to all users")
 public class RestaurantController {
 
     private final RestaurantService restaurantService;
@@ -24,6 +28,10 @@ public class RestaurantController {
     }
 
 
+    @Operation(
+            summary = "Getting all restaurants",
+            description = "Available to all authorized users. The repository result is cached"
+    )
     @GetMapping("/allForUser")
     public ResponseEntity<List<Restaurant>> getRestaurants() {
         List<Restaurant> list = restaurantService.getRestaurants();
@@ -42,6 +50,10 @@ public class RestaurantController {
     }
 
 
+    @Operation(
+            summary = "Getting a restaurant by id",
+            description = "Available only to administrators, in case of errors, a json response is displayed with an indication of the reason"
+    )
     @GetMapping("/{id}")
     public ResponseEntity<Restaurant> getRestaurant(@PathVariable Integer id) {
         if (id == null) {
@@ -55,6 +67,10 @@ public class RestaurantController {
     }
 
 
+    @Operation(
+            summary = "Adding a restaurant by request body",
+            description = "Available only to administrators, in case of errors, a json response is displayed with an indication of the reason"
+    )
     @PostMapping()
     public ResponseEntity<Restaurant> addRestaurant(@Valid @RequestBody Restaurant restaurant) {
         if (restaurant == null) {
@@ -68,6 +84,11 @@ public class RestaurantController {
         return new ResponseEntity<>(restaurant, HttpStatus.OK);
     }
 
+
+    @Operation(
+            summary = "Update a restaurant by request body",
+            description = "Available only to administrators, in case of errors, a json response is displayed with an indication of the reason"
+    )
     @PutMapping
     public ResponseEntity<Restaurant> updateRestaurant(@Valid @RequestBody Restaurant restaurant) {
         if (restaurant == null) {
@@ -80,6 +101,11 @@ public class RestaurantController {
         return new ResponseEntity<>(updateRestaurant, HttpStatus.OK);
     }
 
+
+    @Operation(
+            summary = "Delete a restaurant by request body",
+            description = "Available only to administrators, in case of errors, a json response is displayed with an indication of the reason"
+    )
     @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteRestaurant(@PathVariable Integer id) {
         if (id == null) {

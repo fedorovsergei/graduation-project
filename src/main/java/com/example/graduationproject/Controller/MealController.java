@@ -4,6 +4,8 @@ import com.example.graduationproject.Entity.Meal;
 import com.example.graduationproject.ExceptionHandling.Meal.NoSuchMealException;
 import com.example.graduationproject.ExceptionHandling.Restaurant.NoSuchRestaurantParamException;
 import com.example.graduationproject.Services.MealService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -18,6 +20,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/restaurant/{restaurantId}/meal")
 @Validated
+@Tag(name = "Meal controller", description = "only Admins have access")
 public class MealController {
     private final MealService mealService;
 
@@ -27,6 +30,10 @@ public class MealController {
     }
 
 
+    @Operation(
+            summary = "Getting all meals",
+            description = "Available only to administrators, in case of errors, a json response is displayed with an indication of the reason"
+    )
     @GetMapping()
     public ResponseEntity<List<Meal>> getAllMeal(@PathVariable Integer restaurantId, Principal principal) {
         if (restaurantId == null) {
@@ -40,6 +47,10 @@ public class MealController {
     }
 
 
+    @Operation(
+            summary = "Getting a meal by id",
+            description = "Available only to administrators, in case of errors, a json response is displayed with an indication of the reason"
+    )
     @GetMapping("/{mealId}")
     public ResponseEntity<Meal> getMeal(@PathVariable Integer restaurantId, @PathVariable Integer mealId) {
         if (mealId == null || restaurantId == null) {
@@ -53,6 +64,10 @@ public class MealController {
     }
 
 
+    @Operation(
+            summary = "Adding a meal by id",
+            description = "Available only to administrators, in case of errors, a json response is displayed with an indication of the reason"
+    )
     @PostMapping()
     public ResponseEntity<Meal> addMeal(@PathVariable Integer restaurantId, @Valid @RequestBody Meal meal) {
         if (meal == null || restaurantId == null) {
@@ -66,6 +81,11 @@ public class MealController {
         return new ResponseEntity<>(saveMeal, HttpStatus.OK);
     }
 
+
+    @Operation(
+            summary = "Update a meal by id",
+            description = "Available only to administrators, in case of errors, a json response is displayed with an indication of the reason"
+    )
     @PutMapping
     public ResponseEntity<Meal> updateMeal(@PathVariable Integer restaurantId, @Valid @RequestBody Meal meal) {
         if (meal == null || restaurantId == null) {
@@ -79,6 +99,11 @@ public class MealController {
         return new ResponseEntity<>(updateMeal, HttpStatus.OK);
     }
 
+
+    @Operation(
+            summary = "Delete a meal by id",
+            description = "Available only to administrators, in case of errors, a json response is displayed with an indication of the reason"
+    )
     @DeleteMapping("/{mealId}")
     public ResponseEntity<String> deleteMeal(@PathVariable Integer restaurantId, @PathVariable Integer mealId) {
         if (mealId == null || restaurantId == null) {

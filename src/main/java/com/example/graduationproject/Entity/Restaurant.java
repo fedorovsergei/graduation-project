@@ -1,6 +1,7 @@
 package com.example.graduationproject.Entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -29,5 +30,6 @@ public class Restaurant extends BaseAbstractEntityName {
     @ToString.Exclude
     private List<Vote> votes;
 
+    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private Integer voteCount;
 }

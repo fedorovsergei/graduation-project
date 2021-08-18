@@ -1,6 +1,9 @@
 package com.example.graduationproject.Entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.sun.istack.NotNull;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -29,6 +32,8 @@ public class Vote extends BaseAbstractEntityId {
     @OnDelete(action = OnDeleteAction.CASCADE)
     private User user;
 
+    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     @Column(name = "DATE_INPUT")
+    @NotNull
     private LocalDate dateVote;
 }
