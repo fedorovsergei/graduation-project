@@ -32,14 +32,6 @@ build/
 ### VS Code ###
 .vscode/
 
-
-### Datebase ###
-graduationDB.lck
-graduationDB.log
-graduationDB.properties
-graduationDB.script
-
-
 ### logger ###
 my.log
 *.gz
