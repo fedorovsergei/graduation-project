@@ -103,7 +103,7 @@ public class RestaurantController {
 
 
     @Operation(
-            summary = "Delete a restaurant by request body",
+            summary = "Delete a restaurant by id",
             description = "Available only to administrators, in case of errors, a json response is displayed with an indication of the reason"
     )
     @DeleteMapping("/{id}")

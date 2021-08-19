@@ -34,7 +34,12 @@ build/
 
 
 ### Datebase ###
-*DB.lck
-*DB.log
-*DB.properties
-*DB.script
+graduationDB.lck
+graduationDB.log
+graduationDB.properties
+graduationDB.script
+
+
+### logger ###
+my.log
+*.gz

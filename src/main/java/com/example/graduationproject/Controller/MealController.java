@@ -65,7 +65,7 @@ public class MealController {
 
 
     @Operation(
-            summary = "Adding a meal by id",
+            summary = "Adding a meal by request body",
             description = "Available only to administrators, in case of errors, a json response is displayed with an indication of the reason"
     )
     @PostMapping()
@@ -83,7 +83,7 @@ public class MealController {
 
 
     @Operation(
-            summary = "Update a meal by id",
+            summary = "Update a meal by request body",
             description = "Available only to administrators, in case of errors, a json response is displayed with an indication of the reason"
     )
     @PutMapping
