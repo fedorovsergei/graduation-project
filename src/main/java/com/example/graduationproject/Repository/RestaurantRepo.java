@@ -33,4 +33,5 @@ public interface RestaurantRepo extends JpaRepository<Restaurant, Integer> {
     @Query("Select m from Meal m where m.restaurant.id = :restaurantId and m.dateInput = :date")
 //    @Query("Select m from Meal m where m.dateInput = :date")
     List<Meal> getServers(Integer restaurantId, LocalDate date);
+
 }

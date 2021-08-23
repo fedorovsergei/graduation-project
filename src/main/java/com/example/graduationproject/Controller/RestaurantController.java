@@ -38,12 +38,15 @@ public class RestaurantController {
         if (list.isEmpty()) {
             throw new NoSuchRestaurantException("There are no restaurants in the database");
         }
+
         list.forEach(restaurant -> restaurant.setVotes(restaurant.getVotes()
                 .stream().filter(vote -> vote.getDateVote().equals(LocalDate.now()))
                 .collect(Collectors.toList())));
+
         list.forEach(restaurant -> restaurant.setMeals(restaurant.getMeals()
                 .stream().filter(meal -> meal.getDateInput().equals(LocalDate.now()))
                 .collect(Collectors.toList())));
+
         list.forEach(restaurant -> restaurant.setVoteCount(restaurant.getVotes().size()));
 
         return new ResponseEntity<>(restaurantService.getRestaurants(), HttpStatus.OK);

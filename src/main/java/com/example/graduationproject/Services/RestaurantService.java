@@ -36,8 +36,9 @@ public class RestaurantService {
 
 //        List<Meal> meals = restaurantRepo.getServers(LocalDate.now().minusDays(1));
         List<Restaurant> restaurants = restaurantRepo.findAll();
-        restaurants
-                .forEach(restaurant -> restaurant.setMeals(restaurantRepo.getServers(restaurant.getId(), LocalDate.now())));
+        System.out.println(restaurants.get(0).getMeals().get(0).getPrice());
+//        restaurants
+//                .forEach(restaurant -> restaurant.setMeals(restaurantRepo.getServers(restaurant.getId(), LocalDate.now())));
         return restaurants;
     }
 

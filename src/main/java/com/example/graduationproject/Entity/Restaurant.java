@@ -22,9 +22,9 @@ import java.util.List;
 public class Restaurant extends BaseAbstractEntityName {
 
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "restaurant")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "restaurant")
     @ToString.Exclude
-    private List<Meal> meals;
+    private List<Meal> mealsss;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "restaurant")
     @ToString.Exclude
