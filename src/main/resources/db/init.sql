@@ -38,7 +38,7 @@ CREATE TABLE vote
     FOREIGN KEY (user_id) REFERENCES users (id) ON DELETE CASCADE
 );
 CREATE UNIQUE INDEX user_id_date_input ON vote (user_id, date_input);
-CREATE INDEX date_input ON vote (date_input);
+CREATE INDEX date_input_vote ON vote (date_input);
 
 
 CREATE TABLE meal
@@ -48,5 +48,7 @@ CREATE TABLE meal
     name          VARCHAR(255)          NOT NULL,
     price         INTEGER               NOT NULL,
     date_input    TIMESTAMP default now NOT NULL,
-    FOREIGN KEY (restaurant_id) REFERENCES restaurant (id) ON DELETE CASCADE
+    FOREIGN KEY (restaurant_id) REFERENCES restaurant (id) ON DELETE CASCADE,
+    CONSTRAINT meal_name_date UNIQUE (name, date_input)
 );
+CREATE INDEX date_input_meal ON meal (date_input);

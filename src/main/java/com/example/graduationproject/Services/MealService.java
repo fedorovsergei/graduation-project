@@ -26,8 +26,7 @@ public class MealService {
     }
 
     public Meal getMeal(Integer restaurantId, Integer mealId) {
-        Meal meal = mealRepo.findById(mealId)
-                .orElseThrow(() -> new NoSuchMealException("There is no meal with Id=" + mealId + " in Database"));
+        Meal meal = mealRepo.findById(mealId).orElse(null);
         if (meal != null && meal.getRestaurant() != null && restaurantId.equals(meal.getRestaurant().getId())) {
             return meal;
         }
@@ -42,8 +41,7 @@ public class MealService {
     @Transactional
     @CacheEvict(cacheNames="restaurant", allEntries=true)
     public Meal createAndSaveMeal(Integer restaurantId, Meal meal) {
-        Restaurant restaurant = restaurantRepo
-                .findById(restaurantId).orElseThrow(() -> new NoSuchRestaurantException("Failed to save the restaurant to the database"));
+        Restaurant restaurant = restaurantRepo.findById(restaurantId).orElse(null);
         if (restaurant == null) {
             return null;
         }
@@ -55,8 +53,7 @@ public class MealService {
     @Transactional
     @CacheEvict(cacheNames="restaurant", allEntries=true)
     public void deleteMeal(Integer restaurantId, Integer mealId) {
-        Meal meal = mealRepo.findById(mealId)
-                .orElseThrow(() -> new NoSuchMealException("There is no meal with Id=" + mealId + " in Database"));
+        Meal meal = mealRepo.findById(mealId).orElse(null);
         if (meal != null && meal.getRestaurant() != null && restaurantId.equals(meal.getRestaurant().getId())) {
             mealRepo.deleteById(mealId);
         }

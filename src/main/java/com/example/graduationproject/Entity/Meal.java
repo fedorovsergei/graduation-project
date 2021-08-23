@@ -36,4 +36,14 @@ public class Meal extends BaseAbstractEntityName {
     @Column(name = "DATE_INPUT")
     @NotNull
     private LocalDate dateInput;
+
+    @Override
+    public String toString() {
+        return "Meal{" +
+                "name='" + name + '\'' +
+                ", restaurant=" + restaurant +
+                ", price=" + price +
+                ", dateInput=" + dateInput +
+                '}';
+    }
 }

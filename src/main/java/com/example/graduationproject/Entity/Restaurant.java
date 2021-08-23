@@ -22,7 +22,7 @@ import java.util.List;
 public class Restaurant extends BaseAbstractEntityName {
 
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "restaurant")
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "restaurant")
     @ToString.Exclude
     private List<Meal> meals;
 

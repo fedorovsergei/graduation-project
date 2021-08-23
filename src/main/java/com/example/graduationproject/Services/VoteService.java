@@ -1,5 +1,6 @@
 package com.example.graduationproject.Services;
 
+import com.example.graduationproject.Entity.Restaurant;
 import com.example.graduationproject.Entity.User;
 import com.example.graduationproject.Entity.Vote;
 import com.example.graduationproject.ExceptionHandling.Restaurant.NoSuchRestaurantException;
@@ -30,7 +31,7 @@ public class VoteService {
     @Transactional
     @CacheEvict(cacheNames="restaurant", allEntries=true)
     public Vote vote(String userName, Integer restaurantId) {
-        User user;
+        User user = null;
         try {
             user = userRepo.findByName(userName);
         } catch (Exception e) {
@@ -49,8 +50,11 @@ public class VoteService {
         }
         vote.setDateVote(LocalDate.now());
         vote.setUser(user);
-        vote.setRestaurant(restaurantRepo.findById(restaurantId)
-                .orElseThrow(() -> new NoSuchRestaurantException("Failed to save the restaurant to the database")));
+        Restaurant restaurant = restaurantRepo.findById(restaurantId).orElse(null);
+        if (restaurant == null) {
+            return null;
+        }
+        vote.setRestaurant(restaurant);
         return voteRepo.save(vote);
     }
 }
