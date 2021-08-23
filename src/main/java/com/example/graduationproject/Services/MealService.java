@@ -2,8 +2,6 @@ package com.example.graduationproject.Services;
 
 import com.example.graduationproject.Entity.Meal;
 import com.example.graduationproject.Entity.Restaurant;
-import com.example.graduationproject.ExceptionHandling.Meal.NoSuchMealException;
-import com.example.graduationproject.ExceptionHandling.Restaurant.NoSuchRestaurantException;
 import com.example.graduationproject.Repository.MealRepo;
 import com.example.graduationproject.Repository.RestaurantRepo;
 import org.springframework.cache.annotation.CacheEvict;
@@ -39,7 +37,7 @@ public class MealService {
     }
 
     @Transactional
-    @CacheEvict(cacheNames="restaurant", allEntries=true)
+    @CacheEvict(cacheNames = "restaurant", allEntries = true)
     public Meal createAndSaveMeal(Integer restaurantId, Meal meal) {
         Restaurant restaurant = restaurantRepo.findById(restaurantId).orElse(null);
         if (restaurant == null) {
@@ -51,7 +49,7 @@ public class MealService {
 
 
     @Transactional
-    @CacheEvict(cacheNames="restaurant", allEntries=true)
+    @CacheEvict(cacheNames = "restaurant", allEntries = true)
     public void deleteMeal(Integer restaurantId, Integer mealId) {
         Meal meal = mealRepo.findById(mealId).orElse(null);
         if (meal != null && meal.getRestaurant() != null && restaurantId.equals(meal.getRestaurant().getId())) {

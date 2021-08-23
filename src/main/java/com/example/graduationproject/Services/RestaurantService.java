@@ -1,9 +1,9 @@
 package com.example.graduationproject.Services;
 
-import com.example.graduationproject.Entity.Meal;
 import com.example.graduationproject.Entity.Restaurant;
-import com.example.graduationproject.ExceptionHandling.Restaurant.NoSuchRestaurantException;
+import com.example.graduationproject.Repository.MealRepo;
 import com.example.graduationproject.Repository.RestaurantRepo;
+import com.example.graduationproject.Repository.VoteRepo;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
@@ -17,9 +17,13 @@ import java.util.List;
 public class RestaurantService {
 
     private final RestaurantRepo restaurantRepo;
+    private final MealRepo mealRepo;
+    private final VoteRepo voteRepo;
 
-    public RestaurantService(RestaurantRepo restaurantRepo) {
+    public RestaurantService(RestaurantRepo restaurantRepo, MealRepo mealRepo, VoteRepo voteRepo) {
         this.restaurantRepo = restaurantRepo;
+        this.mealRepo = mealRepo;
+        this.voteRepo = voteRepo;
     }
 
     public Restaurant getRestaurant(Integer id) {
@@ -28,28 +32,26 @@ public class RestaurantService {
 
     @Cacheable("restaurant")
     public List<Restaurant> getRestaurants() {
-//        Select * from RESTAURANT r join VOTE v on r.ID = v.RESTAURANT_ID where v.DATE_INPUT = '2021-08-16'
-//        return restaurantRepo.getAllWithMeal(LocalDate.now().minusDays(1));
-//        List<Restaurant> list = restaurantRepo.findAllByOrderByName();
-//        System.out.println(list.get(0).getVotes().size());
-//        System.out.println(11111);
-
-//        List<Meal> meals = restaurantRepo.getServers(LocalDate.now().minusDays(1));
-        List<Restaurant> restaurants = restaurantRepo.findAll();
-        System.out.println(restaurants.get(0).getMeals().get(0).getPrice());
-//        restaurants
-//                .forEach(restaurant -> restaurant.setMeals(restaurantRepo.getServers(restaurant.getId(), LocalDate.now())));
+        List<Restaurant> restaurants = restaurantRepo.findAllByOrderByName();
+        restaurants
+                .forEach(restaurant -> {
+                            restaurant.setVotes(voteRepo
+                                    .findAllByRestaurantIdAndAndDateVote(restaurant.getId(), LocalDate.now()));
+                            restaurant.setMeals(mealRepo
+                                    .findAllByRestaurantIdAndDateInput(restaurant.getId(), LocalDate.now()));
+                        }
+                );
         return restaurants;
     }
 
     @Transactional
-    @CacheEvict(cacheNames="restaurant", allEntries=true)
+    @CacheEvict(cacheNames = "restaurant", allEntries = true)
     public Restaurant createAndSaveRestaurant(Restaurant restaurant) {
         return restaurantRepo.save(restaurant);
     }
 
     @Transactional
-    @CacheEvict(cacheNames="restaurant", allEntries=true)
+    @CacheEvict(cacheNames = "restaurant", allEntries = true)
     public void deleteRestaurant(Integer id) {
         restaurantRepo.deleteById(id);
     }

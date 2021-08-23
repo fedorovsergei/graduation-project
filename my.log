@@ -27,3 +27,373 @@
 2021-08-24 00:02:28.544  INFO 2724 --- [http-nio-80-exec-2] a.c.c.C.[.[.[/topJava/graduationProject] : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2021-08-24 00:02:28.544  INFO 2724 --- [http-nio-80-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2021-08-24 00:02:28.546  INFO 2724 --- [http-nio-80-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-08-24 00:07:29.699  INFO 2724 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-08-24 00:07:29.703  INFO 2724 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-08-24 00:07:29.752  INFO 2724 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-08-24 00:07:36.300  INFO 15648 --- [main] c.e.graduationproject.GraduationProject  : Starting GraduationProject using Java 1.8.0_302 on SergeiPC with PID 15648 (D:\Sergei\Programs\Java\Project\GraduationProject\target\classes started by Sergei in D:\Sergei\Programs\Java\Project\GraduationProject)
+2021-08-24 00:07:36.303  INFO 15648 --- [main] c.e.graduationproject.GraduationProject  : No active profile set, falling back to default profiles: default
+2021-08-24 00:07:38.610  INFO 15648 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-08-24 00:07:38.685  INFO 15648 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 52 ms. Found 4 JPA repository interfaces.
+2021-08-24 00:07:39.856  INFO 15648 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 80 (http)
+2021-08-24 00:07:39.867  INFO 15648 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-08-24 00:07:39.868  INFO 15648 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.50]
+2021-08-24 00:07:39.954  INFO 15648 --- [main] a.c.c.C.[.[.[/topJava/graduationProject] : Initializing Spring embedded WebApplicationContext
+2021-08-24 00:07:39.955  INFO 15648 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3497 ms
+2021-08-24 00:07:40.137  INFO 15648 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-08-24 00:07:40.197  INFO 15648 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-08-24 00:07:40.341  INFO 15648 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-08-24 00:07:40.477  INFO 15648 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-08-24 00:07:40.761  INFO 15648 --- [main] hsqldb.db.HSQLDB7B2C4A3F5D.ENGINE        : checkpointClose start
+2021-08-24 00:07:40.761  INFO 15648 --- [main] hsqldb.db.HSQLDB7B2C4A3F5D.ENGINE        : checkpointClose synched
+2021-08-24 00:07:40.792  INFO 15648 --- [main] hsqldb.db.HSQLDB7B2C4A3F5D.ENGINE        : checkpointClose script done
+2021-08-24 00:07:40.860  INFO 15648 --- [main] hsqldb.db.HSQLDB7B2C4A3F5D.ENGINE        : checkpointClose end
+2021-08-24 00:07:40.864  INFO 15648 --- [main] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Driver does not support get/set network timeout for connections. (feature not supported)
+2021-08-24 00:07:40.867  INFO 15648 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-08-24 00:07:40.902  INFO 15648 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.HSQLDialect
+2021-08-24 00:07:41.295 ERROR 15648 --- [main] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.MappingException: Could not determine type for: java.util.List, at table: restaurant, for columns: [org.hibernate.mapping.Column(meals)]
+2021-08-24 00:07:41.295  WARN 15648 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.MappingException: Could not determine type for: java.util.List, at table: restaurant, for columns: [org.hibernate.mapping.Column(meals)]
+2021-08-24 00:07:41.296  INFO 15648 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-08-24 00:07:41.343  INFO 15648 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-08-24 00:07:41.345  INFO 15648 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2021-08-24 00:07:41.355  INFO 15648 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-08-24 00:07:41.373 ERROR 15648 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.MappingException: Could not determine type for: java.util.List, at table: restaurant, for columns: [org.hibernate.mapping.Column(meals)]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1786) ~[spring-beans-5.3.9.jar:5.3.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:602) ~[spring-beans-5.3.9.jar:5.3.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:524) ~[spring-beans-5.3.9.jar:5.3.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.9.jar:5.3.9]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.9.jar:5.3.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.9.jar:5.3.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.9.jar:5.3.9]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154) ~[spring-context-5.3.9.jar:5.3.9]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908) ~[spring-context-5.3.9.jar:5.3.9]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.9.jar:5.3.9]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145) ~[spring-boot-2.5.3.jar:2.5.3]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) [spring-boot-2.5.3.jar:2.5.3]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:434) [spring-boot-2.5.3.jar:2.5.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:338) [spring-boot-2.5.3.jar:2.5.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343) [spring-boot-2.5.3.jar:2.5.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1332) [spring-boot-2.5.3.jar:2.5.3]
+	at com.example.graduationproject.GraduationProject.main(GraduationProject.java:19) [classes/:na]
+Caused by: javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.MappingException: Could not determine type for: java.util.List, at table: restaurant, for columns: [org.hibernate.mapping.Column(meals)]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:421) ~[spring-orm-5.3.9.jar:5.3.9]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-5.3.9.jar:5.3.9]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) ~[spring-orm-5.3.9.jar:5.3.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1845) ~[spring-beans-5.3.9.jar:5.3.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782) ~[spring-beans-5.3.9.jar:5.3.9]
+	... 16 common frames omitted
+Caused by: org.hibernate.MappingException: Could not determine type for: java.util.List, at table: restaurant, for columns: [org.hibernate.mapping.Column(meals)]
+	at org.hibernate.mapping.SimpleValue.getType(SimpleValue.java:499) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.mapping.SimpleValue.isValid(SimpleValue.java:466) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.mapping.Property.isValid(Property.java:227) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.mapping.PersistentClass.validate(PersistentClass.java:624) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.mapping.RootClass.validate(RootClass.java:267) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.boot.internal.MetadataImpl.validate(MetadataImpl.java:354) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:298) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:468) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1259) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) ~[spring-orm-5.3.9.jar:5.3.9]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) ~[spring-orm-5.3.9.jar:5.3.9]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-5.3.9.jar:5.3.9]
+	... 20 common frames omitted
+
+2021-08-24 00:08:44.708  INFO 14548 --- [main] c.e.graduationproject.GraduationProject  : Starting GraduationProject using Java 1.8.0_302 on SergeiPC with PID 14548 (D:\Sergei\Programs\Java\Project\GraduationProject\target\classes started by Sergei in D:\Sergei\Programs\Java\Project\GraduationProject)
+2021-08-24 00:08:44.711  INFO 14548 --- [main] c.e.graduationproject.GraduationProject  : No active profile set, falling back to default profiles: default
+2021-08-24 00:08:46.149  INFO 14548 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-08-24 00:08:46.217  INFO 14548 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 59 ms. Found 4 JPA repository interfaces.
+2021-08-24 00:08:47.169  INFO 14548 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 80 (http)
+2021-08-24 00:08:47.246  INFO 14548 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-08-24 00:08:47.247  INFO 14548 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.50]
+2021-08-24 00:08:47.337  INFO 14548 --- [main] a.c.c.C.[.[.[/topJava/graduationProject] : Initializing Spring embedded WebApplicationContext
+2021-08-24 00:08:47.337  INFO 14548 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2537 ms
+2021-08-24 00:08:47.501  INFO 14548 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-08-24 00:08:47.559  INFO 14548 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-08-24 00:08:47.679  INFO 14548 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-08-24 00:08:47.779  INFO 14548 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-08-24 00:08:48.020  INFO 14548 --- [main] hsqldb.db.HSQLDB7B2C4A3F5D.ENGINE        : checkpointClose start
+2021-08-24 00:08:48.020  INFO 14548 --- [main] hsqldb.db.HSQLDB7B2C4A3F5D.ENGINE        : checkpointClose synched
+2021-08-24 00:08:48.046  INFO 14548 --- [main] hsqldb.db.HSQLDB7B2C4A3F5D.ENGINE        : checkpointClose script done
+2021-08-24 00:08:48.126  INFO 14548 --- [main] hsqldb.db.HSQLDB7B2C4A3F5D.ENGINE        : checkpointClose end
+2021-08-24 00:08:48.130  INFO 14548 --- [main] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Driver does not support get/set network timeout for connections. (feature not supported)
+2021-08-24 00:08:48.133  INFO 14548 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-08-24 00:08:48.166  INFO 14548 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.HSQLDialect
+2021-08-24 00:08:48.947  INFO 14548 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-08-24 00:08:48.956  INFO 14548 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-08-24 00:08:49.104  WARN 14548 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-08-24 00:08:50.549  INFO 14548 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@41492479, org.springframework.security.web.context.SecurityContextPersistenceFilter@254513e8, org.springframework.security.web.header.HeaderWriterFilter@44e79e9e, org.springframework.security.web.authentication.logout.LogoutFilter@6a116354, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@3b576ee3, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@74f89bad, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7aa63f50, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7bef7505, org.springframework.security.web.session.SessionManagementFilter@4b99648a, org.springframework.security.web.access.ExceptionTranslationFilter@3664c596, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@e67d3b7]
+2021-08-24 00:08:51.866  INFO 14548 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 80 (http) with context path '/topJava/graduationProject'
+2021-08-24 00:08:52.789  INFO 14548 --- [main] c.e.graduationproject.GraduationProject  : Started GraduationProject in 8.529 seconds (JVM running for 9.156)
+2021-08-24 00:08:52.899  INFO 14548 --- [http-nio-80-exec-1] a.c.c.C.[.[.[/topJava/graduationProject] : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-08-24 00:08:52.899  INFO 14548 --- [http-nio-80-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-08-24 00:08:52.902  INFO 14548 --- [http-nio-80-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2021-08-24 00:09:07.187  INFO 14548 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-08-24 00:09:07.190  INFO 14548 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-08-24 00:09:07.218  INFO 14548 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-08-24 00:13:01.496  INFO 14624 --- [main] c.e.graduationproject.GraduationProject  : Starting GraduationProject using Java 1.8.0_302 on SergeiPC with PID 14624 (D:\Sergei\Programs\Java\Project\GraduationProject\target\classes started by Sergei in D:\Sergei\Programs\Java\Project\GraduationProject)
+2021-08-24 00:13:01.500  INFO 14624 --- [main] c.e.graduationproject.GraduationProject  : No active profile set, falling back to default profiles: default
+2021-08-24 00:13:03.172  INFO 14624 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-08-24 00:13:03.259  INFO 14624 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 78 ms. Found 4 JPA repository interfaces.
+2021-08-24 00:13:04.394  INFO 14624 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 80 (http)
+2021-08-24 00:13:04.406  INFO 14624 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-08-24 00:13:04.406  INFO 14624 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.50]
+2021-08-24 00:13:04.515  INFO 14624 --- [main] a.c.c.C.[.[.[/topJava/graduationProject] : Initializing Spring embedded WebApplicationContext
+2021-08-24 00:13:04.516  INFO 14624 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2918 ms
+2021-08-24 00:13:04.694  INFO 14624 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-08-24 00:13:04.757  INFO 14624 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-08-24 00:13:04.893  INFO 14624 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-08-24 00:13:05.012  INFO 14624 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-08-24 00:13:05.273  INFO 14624 --- [main] hsqldb.db.HSQLDB7B2C4A3F5D.ENGINE        : checkpointClose start
+2021-08-24 00:13:05.274  INFO 14624 --- [main] hsqldb.db.HSQLDB7B2C4A3F5D.ENGINE        : checkpointClose synched
+2021-08-24 00:13:05.297  INFO 14624 --- [main] hsqldb.db.HSQLDB7B2C4A3F5D.ENGINE        : checkpointClose script done
+2021-08-24 00:13:05.363  INFO 14624 --- [main] hsqldb.db.HSQLDB7B2C4A3F5D.ENGINE        : checkpointClose end
+2021-08-24 00:13:05.368  INFO 14624 --- [main] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Driver does not support get/set network timeout for connections. (feature not supported)
+2021-08-24 00:13:05.371  INFO 14624 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-08-24 00:13:05.405  INFO 14624 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.HSQLDialect
+2021-08-24 00:13:06.190  INFO 14624 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-08-24 00:13:06.199  INFO 14624 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-08-24 00:13:06.369  WARN 14624 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-08-24 00:13:07.982  INFO 14624 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@e67d3b7, org.springframework.security.web.context.SecurityContextPersistenceFilter@523ade68, org.springframework.security.web.header.HeaderWriterFilter@62808e9e, org.springframework.security.web.authentication.logout.LogoutFilter@3c1908c8, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@37fffef3, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3664c596, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@74450c9b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1618c98a, org.springframework.security.web.session.SessionManagementFilter@539dd2d0, org.springframework.security.web.access.ExceptionTranslationFilter@71df5f30, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1818d00b]
+2021-08-24 00:13:09.070  INFO 14624 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 80 (http) with context path '/topJava/graduationProject'
+2021-08-24 00:13:09.476  INFO 14624 --- [http-nio-80-exec-1] a.c.c.C.[.[.[/topJava/graduationProject] : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-08-24 00:13:09.477  INFO 14624 --- [http-nio-80-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-08-24 00:13:09.478  INFO 14624 --- [http-nio-80-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-08-24 00:13:09.589  INFO 14624 --- [main] c.e.graduationproject.GraduationProject  : Started GraduationProject in 8.582 seconds (JVM running for 9.117)
+2021-08-24 00:20:30.950  INFO 14624 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-08-24 00:20:30.954  INFO 14624 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-08-24 00:20:31.008  INFO 14624 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-08-24 00:20:37.117  INFO 8444 --- [main] c.e.graduationproject.GraduationProject  : Starting GraduationProject using Java 1.8.0_302 on SergeiPC with PID 8444 (D:\Sergei\Programs\Java\Project\GraduationProject\target\classes started by Sergei in D:\Sergei\Programs\Java\Project\GraduationProject)
+2021-08-24 00:20:37.120  INFO 8444 --- [main] c.e.graduationproject.GraduationProject  : No active profile set, falling back to default profiles: default
+2021-08-24 00:20:38.616  INFO 8444 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-08-24 00:20:38.691  INFO 8444 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 64 ms. Found 4 JPA repository interfaces.
+2021-08-24 00:20:39.677  INFO 8444 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 80 (http)
+2021-08-24 00:20:39.688  INFO 8444 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-08-24 00:20:39.689  INFO 8444 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.50]
+2021-08-24 00:20:39.787  INFO 8444 --- [main] a.c.c.C.[.[.[/topJava/graduationProject] : Initializing Spring embedded WebApplicationContext
+2021-08-24 00:20:39.788  INFO 8444 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2582 ms
+2021-08-24 00:20:39.988  INFO 8444 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-08-24 00:20:40.051  INFO 8444 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-08-24 00:20:40.191  INFO 8444 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-08-24 00:20:40.328  INFO 8444 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-08-24 00:20:40.596  INFO 8444 --- [main] hsqldb.db.HSQLDB7B2C4A3F5D.ENGINE        : checkpointClose start
+2021-08-24 00:20:40.597  INFO 8444 --- [main] hsqldb.db.HSQLDB7B2C4A3F5D.ENGINE        : checkpointClose synched
+2021-08-24 00:20:40.631  INFO 8444 --- [main] hsqldb.db.HSQLDB7B2C4A3F5D.ENGINE        : checkpointClose script done
+2021-08-24 00:20:40.723  INFO 8444 --- [main] hsqldb.db.HSQLDB7B2C4A3F5D.ENGINE        : checkpointClose end
+2021-08-24 00:20:40.728  INFO 8444 --- [main] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Driver does not support get/set network timeout for connections. (feature not supported)
+2021-08-24 00:20:40.731  INFO 8444 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-08-24 00:20:40.767  INFO 8444 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.HSQLDialect
+2021-08-24 00:20:41.511  INFO 8444 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-08-24 00:20:41.526  INFO 8444 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-08-24 00:20:41.646  WARN 8444 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-08-24 00:20:42.860  INFO 8444 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1c0680b0, org.springframework.security.web.context.SecurityContextPersistenceFilter@28cf179c, org.springframework.security.web.header.HeaderWriterFilter@7dd7ec56, org.springframework.security.web.authentication.logout.LogoutFilter@756200d1, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@43ee1cf7, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3149409c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4b5aa48b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2f3cd727, org.springframework.security.web.session.SessionManagementFilter@2dd2ff87, org.springframework.security.web.access.ExceptionTranslationFilter@5e62ca19, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5100c143]
+2021-08-24 00:20:43.889  INFO 8444 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 80 (http) with context path '/topJava/graduationProject'
+2021-08-24 00:20:44.210  INFO 8444 --- [main] c.e.graduationproject.GraduationProject  : Started GraduationProject in 7.539 seconds (JVM running for 8.053)
+2021-08-24 00:20:46.651  INFO 8444 --- [http-nio-80-exec-2] a.c.c.C.[.[.[/topJava/graduationProject] : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-08-24 00:20:46.652  INFO 8444 --- [http-nio-80-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-08-24 00:20:46.654  INFO 8444 --- [http-nio-80-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2021-08-24 00:28:10.007  INFO 8444 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-08-24 00:28:10.009  INFO 8444 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-08-24 00:28:10.040  INFO 8444 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-08-24 00:28:15.134  INFO 17752 --- [main] c.e.graduationproject.GraduationProject  : Starting GraduationProject using Java 1.8.0_302 on SergeiPC with PID 17752 (D:\Sergei\Programs\Java\Project\GraduationProject\target\classes started by Sergei in D:\Sergei\Programs\Java\Project\GraduationProject)
+2021-08-24 00:28:15.136  INFO 17752 --- [main] c.e.graduationproject.GraduationProject  : No active profile set, falling back to default profiles: default
+2021-08-24 00:28:16.801  INFO 17752 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-08-24 00:28:16.880  INFO 17752 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 68 ms. Found 4 JPA repository interfaces.
+2021-08-24 00:28:17.863  INFO 17752 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 80 (http)
+2021-08-24 00:28:17.876  INFO 17752 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-08-24 00:28:17.876  INFO 17752 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.50]
+2021-08-24 00:28:17.964  INFO 17752 --- [main] a.c.c.C.[.[.[/topJava/graduationProject] : Initializing Spring embedded WebApplicationContext
+2021-08-24 00:28:17.964  INFO 17752 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2757 ms
+2021-08-24 00:28:18.125  INFO 17752 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-08-24 00:28:18.181  INFO 17752 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-08-24 00:28:18.317  INFO 17752 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-08-24 00:28:18.438  INFO 17752 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-08-24 00:28:18.697  INFO 17752 --- [main] hsqldb.db.HSQLDB7B2C4A3F5D.ENGINE        : checkpointClose start
+2021-08-24 00:28:18.698  INFO 17752 --- [main] hsqldb.db.HSQLDB7B2C4A3F5D.ENGINE        : checkpointClose synched
+2021-08-24 00:28:18.724  INFO 17752 --- [main] hsqldb.db.HSQLDB7B2C4A3F5D.ENGINE        : checkpointClose script done
+2021-08-24 00:28:18.792  INFO 17752 --- [main] hsqldb.db.HSQLDB7B2C4A3F5D.ENGINE        : checkpointClose end
+2021-08-24 00:28:18.797  INFO 17752 --- [main] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Driver does not support get/set network timeout for connections. (feature not supported)
+2021-08-24 00:28:18.800  INFO 17752 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-08-24 00:28:18.832  INFO 17752 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.HSQLDialect
+2021-08-24 00:28:19.629  INFO 17752 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-08-24 00:28:19.639  INFO 17752 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-08-24 00:28:19.761  WARN 17752 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-08-24 00:28:20.936  INFO 17752 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4aa517c3, org.springframework.security.web.context.SecurityContextPersistenceFilter@51297528, org.springframework.security.web.header.HeaderWriterFilter@3149409c, org.springframework.security.web.authentication.logout.LogoutFilter@4e4bfd9c, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@563c3aca, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1df9f7c6, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@713e49c3, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5f369fc6, org.springframework.security.web.session.SessionManagementFilter@4ce18cec, org.springframework.security.web.access.ExceptionTranslationFilter@28cf179c, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@25b20860]
+2021-08-24 00:28:21.846  INFO 17752 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 80 (http) with context path '/topJava/graduationProject'
+2021-08-24 00:28:22.212  INFO 17752 --- [main] c.e.graduationproject.GraduationProject  : Started GraduationProject in 7.565 seconds (JVM running for 8.065)
+2021-08-24 00:28:23.214  INFO 17752 --- [http-nio-80-exec-2] a.c.c.C.[.[.[/topJava/graduationProject] : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-08-24 00:28:23.214  INFO 17752 --- [http-nio-80-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-08-24 00:28:23.216  INFO 17752 --- [http-nio-80-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2021-08-24 00:28:28.032  INFO 17752 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-08-24 00:28:28.035  INFO 17752 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-08-24 00:28:28.084  INFO 17752 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-08-24 00:29:58.493  INFO 1548 --- [main] c.e.graduationproject.GraduationProject  : Starting GraduationProject using Java 1.8.0_302 on SergeiPC with PID 1548 (D:\Sergei\Programs\Java\Project\GraduationProject\target\classes started by Sergei in D:\Sergei\Programs\Java\Project\GraduationProject)
+2021-08-24 00:29:58.495  INFO 1548 --- [main] c.e.graduationproject.GraduationProject  : No active profile set, falling back to default profiles: default
+2021-08-24 00:29:59.478  INFO 1548 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-08-24 00:29:59.537  INFO 1548 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 51 ms. Found 4 JPA repository interfaces.
+2021-08-24 00:30:00.019  INFO 1548 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 80 (http)
+2021-08-24 00:30:00.027  INFO 1548 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-08-24 00:30:00.027  INFO 1548 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.50]
+2021-08-24 00:30:00.100  INFO 1548 --- [main] a.c.c.C.[.[.[/topJava/graduationProject] : Initializing Spring embedded WebApplicationContext
+2021-08-24 00:30:00.100  INFO 1548 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1538 ms
+2021-08-24 00:30:00.278  INFO 1548 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-08-24 00:30:00.313  INFO 1548 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-08-24 00:30:00.398  INFO 1548 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-08-24 00:30:00.472  INFO 1548 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-08-24 00:30:02.703  INFO 1548 --- [main] hsqldb.db.HSQLDB7B2C4A3F5D.ENGINE        : checkpointClose start
+2021-08-24 00:30:02.703  INFO 1548 --- [main] hsqldb.db.HSQLDB7B2C4A3F5D.ENGINE        : checkpointClose synched
+2021-08-24 00:30:02.730  INFO 1548 --- [main] hsqldb.db.HSQLDB7B2C4A3F5D.ENGINE        : checkpointClose script done
+2021-08-24 00:30:02.799  INFO 1548 --- [main] hsqldb.db.HSQLDB7B2C4A3F5D.ENGINE        : checkpointClose end
+2021-08-24 00:30:02.805  INFO 1548 --- [main] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Driver does not support get/set network timeout for connections. (feature not supported)
+2021-08-24 00:30:02.807  INFO 1548 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-08-24 00:30:02.827  INFO 1548 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.HSQLDialect
+2021-08-24 00:30:03.489  INFO 1548 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-08-24 00:30:03.500  INFO 1548 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-08-24 00:30:03.628  WARN 1548 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-08-24 00:30:04.474  INFO 1548 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@299cab08, org.springframework.security.web.context.SecurityContextPersistenceFilter@152891f8, org.springframework.security.web.header.HeaderWriterFilter@7b4619a3, org.springframework.security.web.authentication.logout.LogoutFilter@61836cd9, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@1b69fc07, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@15a484a9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@30bbe83, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6c75e3bc, org.springframework.security.web.session.SessionManagementFilter@1c411474, org.springframework.security.web.access.ExceptionTranslationFilter@3c8fe8ad, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@46de118b]
+2021-08-24 00:30:04.974  INFO 1548 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 80 (http) with context path '/topJava/graduationProject'
+2021-08-24 00:30:05.218  INFO 1548 --- [main] c.e.graduationproject.GraduationProject  : Started GraduationProject in 7.119 seconds (JVM running for 8.103)
+2021-08-24 00:30:18.948  INFO 1548 --- [http-nio-80-exec-3] a.c.c.C.[.[.[/topJava/graduationProject] : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-08-24 00:30:18.948  INFO 1548 --- [http-nio-80-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-08-24 00:30:18.949  INFO 1548 --- [http-nio-80-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-08-24 00:31:00.283 ERROR 1548 --- [http-nio-80-exec-8] o.a.c.c.C.[.[.[.[dispatcherServlet]      : Servlet.service() for servlet [dispatcherServlet] in context with path [/topJava/graduationProject] threw exception
+
+org.springframework.security.web.firewall.RequestRejectedException: The request was rejected because the URL contained a potentially malicious String "//"
+	at org.springframework.security.web.firewall.StrictHttpFirewall.rejectedBlocklistedUrls(StrictHttpFirewall.java:456) ~[spring-security-web-5.5.1.jar:5.5.1]
+	at org.springframework.security.web.firewall.StrictHttpFirewall.getFirewalledRequest(StrictHttpFirewall.java:429) ~[spring-security-web-5.5.1.jar:5.5.1]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:196) ~[spring-security-web-5.5.1.jar:5.5.1]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183) ~[spring-security-web-5.5.1.jar:5.5.1]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358) ~[spring-web-5.3.9.jar:5.3.9]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271) ~[spring-web-5.3.9.jar:5.3.9]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:190) ~[tomcat-embed-core-9.0.50.jar:9.0.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:163) ~[tomcat-embed-core-9.0.50.jar:9.0.50]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.9.jar:5.3.9]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.9.jar:5.3.9]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:190) ~[tomcat-embed-core-9.0.50.jar:9.0.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:163) ~[tomcat-embed-core-9.0.50.jar:9.0.50]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.9.jar:5.3.9]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.9.jar:5.3.9]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:190) ~[tomcat-embed-core-9.0.50.jar:9.0.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:163) ~[tomcat-embed-core-9.0.50.jar:9.0.50]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.9.jar:5.3.9]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.9.jar:5.3.9]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:190) ~[tomcat-embed-core-9.0.50.jar:9.0.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:163) ~[tomcat-embed-core-9.0.50.jar:9.0.50]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.50.jar:9.0.50]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [tomcat-embed-core-9.0.50.jar:9.0.50]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542) [tomcat-embed-core-9.0.50.jar:9.0.50]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143) [tomcat-embed-core-9.0.50.jar:9.0.50]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.50.jar:9.0.50]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.50.jar:9.0.50]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) [tomcat-embed-core-9.0.50.jar:9.0.50]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382) [tomcat-embed-core-9.0.50.jar:9.0.50]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.50.jar:9.0.50]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) [tomcat-embed-core-9.0.50.jar:9.0.50]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1723) [tomcat-embed-core-9.0.50.jar:9.0.50]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.50.jar:9.0.50]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_302]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_302]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.50.jar:9.0.50]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_302]
+
+2021-08-24 00:31:32.405  WARN 1548 --- [http-nio-80-exec-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: -104, SQLState: 23505
+2021-08-24 00:31:32.405 ERROR 1548 --- [http-nio-80-exec-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : integrity constraint violation: unique constraint or index violation; MEAL_NAME_DATE table: MEAL
+2021-08-24 00:31:37.675  WARN 1548 --- [http-nio-80-exec-3] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: -104, SQLState: 23505
+2021-08-24 00:31:37.676 ERROR 1548 --- [http-nio-80-exec-3] o.h.engine.jdbc.spi.SqlExceptionHelper   : integrity constraint violation: unique constraint or index violation; MEAL_NAME_DATE table: MEAL
+2021-08-24 00:32:08.740  INFO 1548 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-08-24 00:32:08.742  INFO 1548 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-08-24 00:32:08.790  INFO 1548 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-08-24 00:33:23.707  INFO 3628 --- [main] c.e.graduationproject.GraduationProject  : Starting GraduationProject using Java 1.8.0_302 on SergeiPC with PID 3628 (D:\Sergei\Programs\Java\Project\GraduationProject\target\classes started by Sergei in D:\Sergei\Programs\Java\Project\GraduationProject)
+2021-08-24 00:33:23.709  INFO 3628 --- [main] c.e.graduationproject.GraduationProject  : No active profile set, falling back to default profiles: default
+2021-08-24 00:33:25.599  INFO 3628 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-08-24 00:33:25.655  INFO 3628 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 48 ms. Found 4 JPA repository interfaces.
+2021-08-24 00:33:26.422  INFO 3628 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 80 (http)
+2021-08-24 00:33:26.428  INFO 3628 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-08-24 00:33:26.428  INFO 3628 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.50]
+2021-08-24 00:33:26.506  INFO 3628 --- [main] a.c.c.C.[.[.[/topJava/graduationProject] : Initializing Spring embedded WebApplicationContext
+2021-08-24 00:33:26.507  INFO 3628 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2616 ms
+2021-08-24 00:33:26.715  INFO 3628 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-08-24 00:33:26.751  INFO 3628 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-08-24 00:33:26.845  INFO 3628 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-08-24 00:33:26.927  INFO 3628 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-08-24 00:33:27.092  INFO 3628 --- [main] hsqldb.db.HSQLDB7B2C4A3F5D.ENGINE        : checkpointClose start
+2021-08-24 00:33:27.092  INFO 3628 --- [main] hsqldb.db.HSQLDB7B2C4A3F5D.ENGINE        : checkpointClose synched
+2021-08-24 00:33:27.130  INFO 3628 --- [main] hsqldb.db.HSQLDB7B2C4A3F5D.ENGINE        : checkpointClose script done
+2021-08-24 00:33:27.204  INFO 3628 --- [main] hsqldb.db.HSQLDB7B2C4A3F5D.ENGINE        : checkpointClose end
+2021-08-24 00:33:27.208  INFO 3628 --- [main] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Driver does not support get/set network timeout for connections. (feature not supported)
+2021-08-24 00:33:27.210  INFO 3628 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-08-24 00:33:27.230  INFO 3628 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.HSQLDialect
+2021-08-24 00:33:27.877  INFO 3628 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-08-24 00:33:27.886  INFO 3628 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-08-24 00:33:27.990  WARN 3628 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-08-24 00:33:28.865  INFO 3628 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3bf01a01, org.springframework.security.web.context.SecurityContextPersistenceFilter@5e681097, org.springframework.security.web.header.HeaderWriterFilter@38cf4497, org.springframework.security.web.authentication.logout.LogoutFilter@2dde0a34, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@19d3f6ad, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1d2c253, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@294c44b7, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@299cab08, org.springframework.security.web.session.SessionManagementFilter@9d3a7a1, org.springframework.security.web.access.ExceptionTranslationFilter@4f552aa2, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7791ff50]
+2021-08-24 00:33:30.059  INFO 3628 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 80 (http) with context path '/topJava/graduationProject'
+2021-08-24 00:33:30.326  INFO 3628 --- [main] c.e.graduationproject.GraduationProject  : Started GraduationProject in 7.128 seconds (JVM running for 8.182)
+2021-08-24 00:33:43.993  INFO 3628 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-08-24 00:33:43.995  INFO 3628 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-08-24 00:33:44.010  INFO 3628 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-08-24 00:35:47.469  INFO 2784 --- [main] c.e.graduationproject.GraduationProject  : Starting GraduationProject using Java 1.8.0_302 on SergeiPC with PID 2784 (D:\Sergei\Programs\Java\Project\GraduationProject\target\classes started by Sergei in D:\Sergei\Programs\Java\Project\GraduationProject)
+2021-08-24 00:35:47.471  INFO 2784 --- [main] c.e.graduationproject.GraduationProject  : No active profile set, falling back to default profiles: default
+2021-08-24 00:35:48.531  INFO 2784 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-08-24 00:35:48.589  INFO 2784 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 50 ms. Found 4 JPA repository interfaces.
+2021-08-24 00:35:49.068  INFO 2784 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 80 (http)
+2021-08-24 00:35:49.075  INFO 2784 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-08-24 00:35:49.075  INFO 2784 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.50]
+2021-08-24 00:35:49.144  INFO 2784 --- [main] a.c.c.C.[.[.[/topJava/graduationProject] : Initializing Spring embedded WebApplicationContext
+2021-08-24 00:35:49.144  INFO 2784 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1623 ms
+2021-08-24 00:35:49.309  INFO 2784 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-08-24 00:35:49.347  INFO 2784 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-08-24 00:35:49.446  INFO 2784 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-08-24 00:35:49.556  INFO 2784 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-08-24 00:35:49.723  INFO 2784 --- [main] hsqldb.db.HSQLDB7B2C4A3F5D.ENGINE        : checkpointClose start
+2021-08-24 00:35:49.723  INFO 2784 --- [main] hsqldb.db.HSQLDB7B2C4A3F5D.ENGINE        : checkpointClose synched
+2021-08-24 00:35:49.747  INFO 2784 --- [main] hsqldb.db.HSQLDB7B2C4A3F5D.ENGINE        : checkpointClose script done
+2021-08-24 00:35:49.802  INFO 2784 --- [main] hsqldb.db.HSQLDB7B2C4A3F5D.ENGINE        : checkpointClose end
+2021-08-24 00:35:49.807  INFO 2784 --- [main] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Driver does not support get/set network timeout for connections. (feature not supported)
+2021-08-24 00:35:49.810  INFO 2784 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-08-24 00:35:49.829  INFO 2784 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.HSQLDialect
+2021-08-24 00:35:50.415  INFO 2784 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-08-24 00:35:50.423  INFO 2784 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-08-24 00:35:50.544  WARN 2784 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-08-24 00:35:51.503  INFO 2784 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4ae958b0, org.springframework.security.web.context.SecurityContextPersistenceFilter@46591e98, org.springframework.security.web.header.HeaderWriterFilter@65b73689, org.springframework.security.web.authentication.logout.LogoutFilter@5e2975ca, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@1d2c253, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2110684a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5c60c08, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7c682e26, org.springframework.security.web.session.SessionManagementFilter@5af40e45, org.springframework.security.web.access.ExceptionTranslationFilter@3e5ebdfe, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@43f99817]
+2021-08-24 00:35:52.030  INFO 2784 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 80 (http) with context path '/topJava/graduationProject'
+2021-08-24 00:35:52.277  INFO 2784 --- [main] c.e.graduationproject.GraduationProject  : Started GraduationProject in 5.285 seconds (JVM running for 6.199)
+2021-08-24 00:36:09.689  INFO 2784 --- [http-nio-80-exec-1] a.c.c.C.[.[.[/topJava/graduationProject] : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-08-24 00:36:09.689  INFO 2784 --- [http-nio-80-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-08-24 00:36:09.691  INFO 2784 --- [http-nio-80-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2021-08-24 00:38:03.998  INFO 2784 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-08-24 00:38:04.000  INFO 2784 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-08-24 00:38:04.031  INFO 2784 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-08-24 00:38:22.298  INFO 15472 --- [main] c.e.graduationproject.GraduationProject  : Starting GraduationProject using Java 1.8.0_302 on SergeiPC with PID 15472 (D:\Sergei\Programs\Java\Project\GraduationProject\target\classes started by Sergei in D:\Sergei\Programs\Java\Project\GraduationProject)
+2021-08-24 00:38:22.301  INFO 15472 --- [main] c.e.graduationproject.GraduationProject  : No active profile set, falling back to default profiles: default
+2021-08-24 00:38:23.300  INFO 15472 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-08-24 00:38:23.356  INFO 15472 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 48 ms. Found 4 JPA repository interfaces.
+2021-08-24 00:38:23.769  INFO 15472 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 80 (http)
+2021-08-24 00:38:23.776  INFO 15472 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-08-24 00:38:23.776  INFO 15472 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.50]
+2021-08-24 00:38:23.846  INFO 15472 --- [main] a.c.c.C.[.[.[/topJava/graduationProject] : Initializing Spring embedded WebApplicationContext
+2021-08-24 00:38:23.846  INFO 15472 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1456 ms
+2021-08-24 00:38:24.076  INFO 15472 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-08-24 00:38:24.123  INFO 15472 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-08-24 00:38:24.211  INFO 15472 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-08-24 00:38:24.305  INFO 15472 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-08-24 00:38:24.491  INFO 15472 --- [main] hsqldb.db.HSQLDB7B2C4A3F5D.ENGINE        : checkpointClose start
+2021-08-24 00:38:24.491  INFO 15472 --- [main] hsqldb.db.HSQLDB7B2C4A3F5D.ENGINE        : checkpointClose synched
+2021-08-24 00:38:24.522  INFO 15472 --- [main] hsqldb.db.HSQLDB7B2C4A3F5D.ENGINE        : checkpointClose script done
+2021-08-24 00:38:24.556  INFO 15472 --- [main] hsqldb.db.HSQLDB7B2C4A3F5D.ENGINE        : checkpointClose end
+2021-08-24 00:38:24.650  INFO 15472 --- [main] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Driver does not support get/set network timeout for connections. (feature not supported)
+2021-08-24 00:38:24.653  INFO 15472 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-08-24 00:38:24.672  INFO 15472 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.HSQLDialect
+2021-08-24 00:38:25.298  INFO 15472 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-08-24 00:38:25.308  INFO 15472 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-08-24 00:38:25.414  WARN 15472 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-08-24 00:38:26.375  INFO 15472 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3ec7ad61, org.springframework.security.web.context.SecurityContextPersistenceFilter@65b73689, org.springframework.security.web.header.HeaderWriterFilter@3e5ebdfe, org.springframework.security.web.authentication.logout.LogoutFilter@616f81b5, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@9d3a7a1, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5af40e45, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@62794582, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2833c093, org.springframework.security.web.session.SessionManagementFilter@3ff26c9, org.springframework.security.web.access.ExceptionTranslationFilter@43b4ec0c, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3e2c8ef]
+2021-08-24 00:38:26.907  INFO 15472 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 80 (http) with context path '/topJava/graduationProject'
+2021-08-24 00:38:27.171  INFO 15472 --- [main] c.e.graduationproject.GraduationProject  : Started GraduationProject in 5.25 seconds (JVM running for 6.258)
+2021-08-24 00:38:31.122  INFO 15472 --- [http-nio-80-exec-2] a.c.c.C.[.[.[/topJava/graduationProject] : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-08-24 00:38:31.123  INFO 15472 --- [http-nio-80-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-08-24 00:38:31.124  INFO 15472 --- [http-nio-80-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-08-24 00:43:47.063  INFO 15472 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-08-24 00:43:47.065  INFO 15472 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-08-24 00:43:47.099  INFO 15472 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

@@ -3,7 +3,6 @@ package com.example.graduationproject.Services;
 import com.example.graduationproject.Entity.Restaurant;
 import com.example.graduationproject.Entity.User;
 import com.example.graduationproject.Entity.Vote;
-import com.example.graduationproject.ExceptionHandling.Restaurant.NoSuchRestaurantException;
 import com.example.graduationproject.Repository.RestaurantRepo;
 import com.example.graduationproject.Repository.UserRepo;
 import com.example.graduationproject.Repository.VoteRepo;
@@ -29,7 +28,7 @@ public class VoteService {
     }
 
     @Transactional
-    @CacheEvict(cacheNames="restaurant", allEntries=true)
+    @CacheEvict(cacheNames = "restaurant", allEntries = true)
     public Vote vote(String userName, Integer restaurantId) {
         User user = null;
         try {

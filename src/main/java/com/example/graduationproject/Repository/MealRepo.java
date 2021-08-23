@@ -5,6 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Repository
@@ -12,4 +13,6 @@ import java.util.List;
 public interface MealRepo extends JpaRepository<Meal, Integer> {
 
     List<Meal> findAllByRestaurantId(Integer restaurantId);
+
+    List<Meal> findAllByRestaurantIdAndDateInput(Integer restaurantId, LocalDate date);
 }

@@ -7,10 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.List;
 
 @Entity
@@ -24,12 +21,13 @@ public class Restaurant extends BaseAbstractEntityName {
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "restaurant")
     @ToString.Exclude
-    private List<Meal> mealsss;
+    private List<Meal> meals;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "restaurant")
     @ToString.Exclude
     private List<Vote> votes;
 
     @JsonProperty(access = JsonProperty.Access.READ_ONLY)
+    @Transient
     private Integer voteCount;
 }

@@ -4,7 +4,6 @@ import com.example.graduationproject.Entity.Vote;
 import com.example.graduationproject.ExceptionHandling.Vote.NoSuchVoteException;
 import com.example.graduationproject.ExceptionHandling.Vote.NoSuchVoteParamException;
 import com.example.graduationproject.Services.VoteService;
-
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.HttpStatus;
@@ -18,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/vote")
-@Tag(name="Voting controller", description = "Only users have access")
+@Tag(name = "Voting controller", description = "Only users have access")
 
 public class VoteController {
 
